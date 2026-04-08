@@ -3,6 +3,8 @@
 > **Brainless cars become lap record holders through the brutal logic of survival.**  
 > Watch neural networks evolve, crash, and eventually master three iconic F1 circuits — with zero hardcoded rules, zero ML libraries, and zero mercy.
 
+🔴 **[Live Demo → f1-neural-sim.vercel.app](https://f1-neural-sim.vercel.app/)**
+
 ---
 
 ```
