@@ -233,7 +233,3 @@ Do whatever you want with it. Just don't tell the FIA.
 ---
 
 *Built with canvas 2D, Matter.js, and an unhealthy interest in both Formula 1 and machine learning.*
-## Tracks
-- **Suzuka** — figure-of-eight layout, 18 turns
-- **Silverstone** — high-speed flowing circuit, 18 turns  
-- **Monza** — flat-out power track, 11 turns
