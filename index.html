@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>F1 Neural Evolution</title>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/hud.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+</head>
+<body>
+<canvas id="sim"></canvas>
+<div id="hud">
+  <div id="tl">
+    <div class="rb-stripe"></div>
+    <div class="tl-inner">
+      <div id="gen-line">Gen <span class="gen-num" id="gn">1</span><span class="sep">—</span><span class="track-nm" id="tn">Suzuka</span></div>
+      <div id="race-line">Racing: <span class="hi" id="al">0</span>/<span class="hi" id="tot">30</span> &nbsp;|&nbsp; Finished: <span class="hi" id="fi">0</span></div>
+      <div id="lap-line">Best Lap: <span class="best" id="bl">--</span> &nbsp;|&nbsp; Gen Lap: <span class="gen" id="gl">--</span></div>
+    </div>
+  </div>
+
+  <div id="spd-badge">
+    <span class="label">Speed</span>
+    <span class="val" id="spd-val">1.0×</span>
+  </div>
+
+  <div id="settings">
+    <div class="s-head">
+      <h3>Settings</h3>
+      <span class="rb-tag">F1 SIM</span>
+    </div>
+    <div class="s-body">
+      <div class="s-row"><label>Track</label><select id="sel-track"></select></div>
+      <div class="s-row"><label>Cars</label><input id="inp-cars" type="number" min="5" max="80" value="30"/></div>
+      <div class="s-row"><label>Speed</label>
+        <div class="range-wrap">
+          <input id="inp-speed" type="range" min="0.5" max="8" step="0.5" value="1"/>
+          <span class="rval" id="spd-r">1.0×</span>
+        </div>
+      </div>
+      <div class="s-row"><label>Mutation</label>
+        <div class="range-wrap">
+          <input id="inp-mut" type="range" min="0.05" max="1.5" step="0.05" value="0.25"/>
+          <span class="rval" id="mut-r">0.25</span>
+        </div>
+      </div>
+      <div class="s-row"><label>Timeout</label><input id="inp-timeout" type="number" min="300" max="6000" step="100" value="1200"/></div>
+      <div class="divider"></div>
+      <button class="btn-apply" id="btn-apply">Apply &amp; Restart</button>
+      <button class="btn-hide" id="btn-hide">Hide Panel</button>
+    </div>
+  </div>
+  <button id="show-settings">⚙ Settings</button>
+
+  <div id="nn-panel">
+    <div class="panel-title">Neural Network</div>
+    <canvas id="nn-canvas" width="200" height="170"></canvas>
+  </div>
+
+  <div id="graph-panel">
+    <div class="panel-title">Lap Time by Generation</div>
+    <canvas id="graph-canvas" width="260" height="140"></canvas>
+  </div>
+
+  <div id="gen-flash"></div>
+  <div id="keys">← → Track &nbsp;·&nbsp; R Restart &nbsp;·&nbsp; +/- Speed</div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/tracks.js"></script>
+<script src="js/neural.js"></script>
+<script src="js/track.js"></script>
+<script src="js/car.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/hud.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
